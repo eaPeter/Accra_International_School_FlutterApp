@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         // appBar: AppBar(),
         body: Center(
           child: Column(children: [
-            Image.asset("assets/image/logo.png"),
+            Image.asset("assets/images/logo.png"),
             const Text("Accra International School"),
             const Text("Training our leaders for today")
           ]),
