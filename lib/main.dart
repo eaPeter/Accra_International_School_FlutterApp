@@ -12,29 +12,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // appBar: AppBar(),
-        body: Center(
+        appBar: AppBar(
+            // title: const Text("AppBar Demo"),
+            leading: const IconButton(
+                onPressed: null, icon: Icon(Icons.account_circle_rounded)),
+            actions: const <Widget>[
+              IconButton(onPressed: null, icon: Icon(Icons.notifications))
+            ]),
+        body: Container(
+          margin: const EdgeInsets.only(left: 16.0),
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset(
-                  "assets/images/logo.png",
-                  width: 214.25,
-                  height: 162,
-                ),
-                const Text("Accra International School",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                    )),
-                // const Text("Accra International School",
-                //     style: GoogleFonts.oswald(textStyle: display1),),
-                const Text(
-                  "Training our leaders for today",
-                  style: TextStyle(fontSize: 16),
-                )
-              ]),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                width: double.infinity,
+                height: 30,
+              ),
+              const Text("Seek knowledge"),
+              Row(
+                children: const [SizedBox(width: 285, height: 45)],
+              )
+            ],
+          ),
         ),
       ),
     );
