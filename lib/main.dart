@@ -28,10 +28,23 @@ class MyApp extends StatelessWidget {
                 width: double.infinity,
                 height: 30,
               ),
-              const Text("Seek knowledge"),
-              Row(
-                children: const [SizedBox(width: 285, height: 45)],
-              )
+              const Text(
+                "Seek knowledge",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 20.0),
+                width: 285,
+                height: 45,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey, width: 1.0),
+                  borderRadius: const BorderRadius.all(Radius.circular(5)),
+                ),
+              ),
             ],
           ),
         ),
