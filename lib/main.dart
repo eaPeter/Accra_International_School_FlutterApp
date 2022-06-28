@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               IconButton(onPressed: null, icon: Icon(Icons.notifications))
             ]),
         body: Container(
-          margin: const EdgeInsets.only(left: 16.0),
+          margin: const EdgeInsets.only(left: 16.0, right: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,21 +35,39 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                width: 285,
-                height: 45,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      color: const Color.fromARGB(255, 163, 163, 162),
-                      width: 1.0),
-                  borderRadius: const BorderRadius.all(Radius.circular(5)),
-                ),
-                child: Row(children: const [
-                  Icon(Icons.search_rounded),
-                  Text("Search"),
-                ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(top: 20.0),
+                    width: 285,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 163, 163, 162),
+                          width: 1.0),
+                      borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    ),
+                    child: Row(children: const [
+                      Icon(Icons.search_rounded),
+                      Text("Search"),
+                    ]),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 20.0),
+                    width: 45,
+                    height: 45,
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 40, 48, 84),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                    ),
+                    child: const Icon(
+                      Icons.filter_alt_outlined,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
