@@ -41,9 +41,15 @@ class MyApp extends StatelessWidget {
                 height: 45,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Colors.grey, width: 1.0),
+                  border: Border.all(
+                      color: const Color.fromARGB(255, 163, 163, 162),
+                      width: 1.0),
                   borderRadius: const BorderRadius.all(Radius.circular(5)),
                 ),
+                child: Row(children: const [
+                  Icon(Icons.search_rounded),
+                  Text("Search"),
+                ]),
               ),
             ],
           ),
