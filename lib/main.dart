@@ -8,6 +8,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  void stars() {
+    const Icon(
+      Icons.star,
+      size: 9,
+      color: Color(0xFFFFC700),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -69,8 +77,41 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(
+                width: double.infinity,
+                height: 20,
+              ),
               Row(
-                children: const [Text("English Language"), Text("See all")],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "English Language",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  Text("See all")
+                ],
+              ),
+              Column(
+                children: [
+                  const SizedBox(
+                    width: 200,
+                    height: 125,
+                  ),
+                  const Text(
+                    "The Good English Academy Aljamar",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  ),
+                  const Text("Junior High School"),
+                  Row(
+                    children: const [
+                      Text(
+                        "5.0",
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      stars,
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
