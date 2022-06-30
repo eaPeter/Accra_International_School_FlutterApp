@@ -69,6 +69,9 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
+              Row(
+                children: const [Text("English Language"), Text("See all")],
+              ),
             ],
           ),
         ),
