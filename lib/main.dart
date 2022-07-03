@@ -121,6 +121,7 @@ class MyApp extends StatelessWidget {
                         style: TextStyle(fontSize: 12),
                       ),
                       // stars(),
+                      Ratings(),
                     ],
                   ),
                 ],
@@ -141,10 +142,29 @@ class Ratings extends StatefulWidget {
 }
 
 class _RatingsState extends State<Ratings> {
+  int _rating = 0;
+
+  void _setRatingAsOne() {
+    setState(() {
+      _rating = 1;
+    });
+  }
+
+  void _setRatingAsTwo() {
+    setState(() {
+      _rating = 2;
+    });
+  }
+
+  void _setRatingAsThree() {
+    setState(() {
+      _rating = 3;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    double iconSize = 9;
-    print(rating);
+    double iconSize = 20;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -153,7 +173,7 @@ class _RatingsState extends State<Ratings> {
         Container(
           padding: const EdgeInsets.all(0),
           child: IconButton(
-            icon: rating >= 1
+            icon: _rating >= 1
                 ? Icon(
                     Icons.star,
                     size: iconSize,
@@ -162,15 +182,15 @@ class _RatingsState extends State<Ratings> {
                     Icons.star_border,
                     size: iconSize,
                   ),
-            onPressed: null,
+            onPressed: _setRatingAsOne,
             color: const Color(0xFFFFC700),
           ),
         ),
         Container(
           padding: const EdgeInsets.all(0),
           child: IconButton(
-            onPressed: null,
-            icon: rating >= 2
+            onPressed: _setRatingAsTwo,
+            icon: _rating >= 2
                 ? Icon(
                     Icons.star,
                     size: iconSize,
@@ -185,8 +205,8 @@ class _RatingsState extends State<Ratings> {
         Container(
           padding: const EdgeInsets.all(0),
           child: IconButton(
-            onPressed: null,
-            icon: rating >= 3
+            onPressed: _setRatingAsThree,
+            icon: _rating >= 3
                 ? Icon(
                     Icons.star,
                     size: iconSize,
