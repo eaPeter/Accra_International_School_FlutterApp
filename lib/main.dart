@@ -91,9 +91,21 @@ class MyApp extends StatelessWidget {
                   Text("See all")
                 ],
               ),
+              const SizedBox(
+                height: 15,
+                width: double.infinity,
+              ),
               Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(
+                  // const SizedBox(
+                  //   width: 200,
+                  //   height: 125,
+                  // ),
+                  Image.asset(
+                    "assets/images/logo.png",
                     width: 200,
                     height: 125,
                   ),
@@ -108,7 +120,7 @@ class MyApp extends StatelessWidget {
                         "5.0",
                         style: TextStyle(fontSize: 12),
                       ),
-                      stars,
+                      // stars(),
                     ],
                   ),
                 ],
@@ -117,6 +129,76 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Ratings extends StatefulWidget {
+  const Ratings({Key? key}) : super(key: key);
+
+  @override
+  State<Ratings> createState() => _RatingsState();
+}
+
+class _RatingsState extends State<Ratings> {
+  @override
+  Widget build(BuildContext context) {
+    double iconSize = 9;
+    print(rating);
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            icon: rating >= 1
+                ? Icon(
+                    Icons.star,
+                    size: iconSize,
+                  )
+                : Icon(
+                    Icons.star_border,
+                    size: iconSize,
+                  ),
+            onPressed: null,
+            color: const Color(0xFFFFC700),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: null,
+            icon: rating >= 2
+                ? Icon(
+                    Icons.star,
+                    size: iconSize,
+                  )
+                : Icon(
+                    Icons.star_border,
+                    size: iconSize,
+                  ),
+            color: const Color(0xFFFFC700),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: null,
+            icon: rating >= 3
+                ? Icon(
+                    Icons.star,
+                    size: iconSize,
+                  )
+                : Icon(
+                    Icons.star_border,
+                    size: iconSize,
+                  ),
+            color: const Color(0xFFFFC700),
+          ),
+        ),
+      ],
     );
   }
 }
