@@ -162,6 +162,18 @@ class _RatingsState extends State<Ratings> {
     });
   }
 
+  void _setRatingAsFour() {
+    setState(() {
+      _rating = 4;
+    });
+  }
+
+  void _setRatingAsFive() {
+    setState(() {
+      _rating = 5;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double iconSize = 20;
@@ -207,6 +219,38 @@ class _RatingsState extends State<Ratings> {
           child: IconButton(
             onPressed: _setRatingAsThree,
             icon: _rating >= 3
+                ? Icon(
+                    Icons.star,
+                    size: iconSize,
+                  )
+                : Icon(
+                    Icons.star_border,
+                    size: iconSize,
+                  ),
+            color: const Color(0xFFFFC700),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: _setRatingAsFour,
+            icon: _rating >= 4
+                ? Icon(
+                    Icons.star,
+                    size: iconSize,
+                  )
+                : Icon(
+                    Icons.star_border,
+                    size: iconSize,
+                  ),
+            color: const Color(0xFFFFC700),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: _setRatingAsFive,
+            icon: _rating >= 5
                 ? Icon(
                     Icons.star,
                     size: iconSize,
