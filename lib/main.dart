@@ -18,22 +18,22 @@ class MyApp extends StatelessWidget {
             actions: const <Widget>[
               IconButton(onPressed: null, icon: Icon(Icons.notifications))
             ]),
-        body: Center(
+        body: Container(
           child: Column(
-            children: const [
-              // Image.asset(
-              //   'assets/images/splash1.png',
-              //   width: 327.61,
-              //   height: 300,
-              // ),
-              Text(
+            children: [
+              Image.asset(
+                'assets/images/onboarding1.png',
+                width: 327.61,
+                height: 300,
+              ),
+              const Text(
                 "Revise and learn ahead anywhere",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Text(
+              const Text(
                 "Resources such as books and videos are available at no cost.",
                 style: TextStyle(fontSize: 14),
               )
