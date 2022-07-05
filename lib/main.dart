@@ -18,10 +18,25 @@ class MyApp extends StatelessWidget {
             actions: const <Widget>[
               IconButton(onPressed: null, icon: Icon(Icons.notifications))
             ]),
-        body: Container(
+        body: Center(
           child: Column(
-            children: [
-              Image.asset("assets/images/splash1"),
+            children: const [
+              // Image.asset(
+              //   'assets/images/splash1.png',
+              //   width: 327.61,
+              //   height: 300,
+              // ),
+              Text(
+                "Revise and learn ahead anywhere",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                "Resources such as books and videos are available at no cost.",
+                style: TextStyle(fontSize: 14),
+              )
             ],
           ),
         ),
