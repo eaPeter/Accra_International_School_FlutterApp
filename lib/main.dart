@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+// import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     // final ButtonStyle styling = ElevatedButton.styleFrom(
     //   primary: const Color(0xFF283054),
     // );
-    initialRoute:
+    // initialRoute:
     '/home';
     return MaterialApp(
       home: Scaffold(
