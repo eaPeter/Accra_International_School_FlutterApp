@@ -109,14 +109,19 @@ class Splash1 extends StatelessWidget {
                     ],
                   )),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: Text(
-                "Skip",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/home');
+              },
+              child: const Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  "Skip",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
+                ),
               ),
             )
           ],
