@@ -1,5 +1,6 @@
+import 'package:accra_app/home.dart';
 import 'package:flutter/material.dart';
-// import 'home.dart';
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -91,7 +92,12 @@ class MyApp extends StatelessWidget {
                 width: 302,
                 height: 47,
                 child: ElevatedButton(
-                    onPressed: null,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MyHome()),
+                      );
+                    },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                             const Color(0xFF283054))),
