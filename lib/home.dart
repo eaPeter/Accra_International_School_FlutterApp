@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
-// void main() {
-//   runApp(const Home());
-// }
-
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -35,85 +31,92 @@ class Home extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 20.0),
-                    width: 285,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 163, 163, 162),
-                          width: 1.0),
-                      borderRadius: const BorderRadius.all(Radius.circular(5)),
-                    ),
-                    child: Row(children: const [
-                      Icon(Icons.search_rounded),
-                      Text("Search"),
-                    ]),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 20.0),
-                    width: 45,
-                    height: 45,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 40, 48, 84),
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                    ),
-                    child: const Icon(
-                      Icons.filter_alt_outlined,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                width: double.infinity,
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    "English Language",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                  ),
-                  Text("See all")
-                ],
-              ),
-              const SizedBox(
-                height: 15,
-                width: double.infinity,
-              ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  // const SizedBox(
-                  //   width: 200,
-                  //   height: 125,
-                  // ),
-                  Image.asset(
-                    "assets/images/logo.png",
-                    width: 200,
-                    height: 125,
-                  ),
-                  const Text(
-                    "The Good English Academy Aljamar",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                  ),
-                  const Text("Junior High School"),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(top: 20.0),
+                        width: 285,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 163, 163, 162),
+                              width: 1.0),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5)),
+                        ),
+                        child: Row(children: const [
+                          Icon(Icons.search_rounded),
+                          Text("Search"),
+                        ]),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 20.0),
+                        width: 45,
+                        height: 45,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 40, 48, 84),
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                        ),
+                        child: const Icon(
+                          Icons.filter_alt_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: double.infinity,
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
                       Text(
-                        "5.0",
-                        style: TextStyle(fontSize: 12),
+                        "English Language",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w600),
                       ),
-                      // stars(),
-                      Ratings(),
+                      Text("See all")
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                    width: double.infinity,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // const SizedBox(
+                      //   width: 200,
+                      //   height: 125,
+                      // ),
+                      Image.asset(
+                        "assets/images/logo.png",
+                        width: 200,
+                        height: 125,
+                      ),
+                      const Text(
+                        "The Good English Academy Aljamar",
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w600),
+                      ),
+                      const Text("Junior High School"),
+                      Row(
+                        children: const [
+                          Text(
+                            "5.0",
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          // stars(),
+                          Ratings(),
+                        ],
+                      ),
                     ],
                   ),
                 ],
