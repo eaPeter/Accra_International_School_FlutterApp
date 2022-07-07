@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(const MyHome());
-}
+// void main() {
+//   runApp(const Home());
+// }
 
-class MyHome extends StatelessWidget {
-  const MyHome({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
