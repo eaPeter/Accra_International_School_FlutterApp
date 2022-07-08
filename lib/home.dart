@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
@@ -82,42 +83,76 @@ class Home extends StatelessWidget {
                     Text("See all")
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
-                  width: double.infinity,
+                CarouselSlider(
+                  options: CarouselOptions(height: 221.0),
+                  items: [1, 2, 3, 4, 5].map((i) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                            decoration:
+                                const BoxDecoration(color: Colors.amber),
+                            child: Text(
+                              'text $i',
+                              style: const TextStyle(fontSize: 16.0),
+                            ));
+                      },
+                    );
+                  }).toList(),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // const SizedBox(
-                    //   width: 200,
-                    //   height: 125,
-                    // ),
-                    Image.asset(
-                      "assets/images/logo.png",
-                      width: 200,
-                      height: 125,
-                    ),
-                    const Text(
-                      "The Good English Academy Aljamar",
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                    ),
-                    const Text("Junior High School"),
-                    Row(
-                      children: const [
-                        Text(
-                          "5.0",
-                          style: TextStyle(fontSize: 12),
-                        ),
-                        // stars(),
-                        Ratings(),
-                      ],
-                    ),
-                  ],
-                ),
+                const Courses(
+                    image: "logo.png",
+                    title: "My lang",
+                    subtitle: "langs langs"),
+                // const SizedBox(
+                //   height: 15,
+                //   width: double.infinity,
+                // ),
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.start,
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   mainAxisSize: MainAxisSize.min,
+                //   children: [
+                //     // const SizedBox(
+                //     //   width: 200,
+                //     //   height: 125,
+                //     // ),
+                //     Image.asset(
+                //       "assets/images/logo.png",
+                //       width: 200,
+                //       height: 125,
+                //     ),
+                //     const Padding(
+                //       padding: EdgeInsets.only(top: 15),
+                //       child: SizedBox(
+                //         width: 200,
+                //         child: Text(
+                //           "The Good English Academy Aljamar",
+                //           style: TextStyle(
+                //               fontSize: 14, fontWeight: FontWeight.w600),
+                //         ),
+                //       ),
+                //     ),
+                //     const Padding(
+                //       padding: EdgeInsets.only(top: 5),
+                //       child: Text("Junior High School"),
+                //     ),
+                //     Padding(
+                //       padding: const EdgeInsets.only(top: 4),
+                //       child: Row(
+                //         children: const [
+                //           Text(
+                //             "5.0",
+                //             style: TextStyle(fontSize: 12),
+                //           ),
+                //           // stars(),
+                //           Ratings(),
+                //         ],
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ],
@@ -169,15 +204,16 @@ class _RatingsState extends State<Ratings> {
 
   @override
   Widget build(BuildContext context) {
-    double iconSize = 20;
+    double iconSize = 12;
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(3),
           child: IconButton(
+            iconSize: iconSize,
             icon: _rating >= 1
                 ? Icon(
                     Icons.star,
@@ -192,8 +228,9 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(3),
           child: IconButton(
+            iconSize: iconSize,
             onPressed: _setRatingAsTwo,
             icon: _rating >= 2
                 ? Icon(
@@ -208,7 +245,7 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(3),
           child: IconButton(
             onPressed: _setRatingAsThree,
             icon: _rating >= 3
@@ -224,7 +261,7 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(3),
           child: IconButton(
             onPressed: _setRatingAsFour,
             icon: _rating >= 4
@@ -240,7 +277,7 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(0),
+          padding: const EdgeInsets.all(3),
           child: IconButton(
             onPressed: _setRatingAsFive,
             icon: _rating >= 5
@@ -257,5 +294,76 @@ class _RatingsState extends State<Ratings> {
         ),
       ],
     );
+  }
+}
+
+class Courses extends StatelessWidget {
+  const Courses(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.subtitle})
+      : super(key: key);
+  final String image;
+  final String title;
+  final String subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      const SizedBox(
+        height: 15,
+        width: double.infinity,
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // const SizedBox(
+          //   width: 200,
+          //   height: 125,
+          // ),
+          Image.asset(
+            "assets/images/$image",
+            // "assets/images/logo.png",
+            width: 200,
+            height: 125,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: SizedBox(
+              width: 200,
+              child: Text(
+                title,
+                // "The Good English Academy Aljamar",
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Text(
+              subtitle,
+              // "Junior High School"
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Row(
+              children: const [
+                Text(
+                  "5.0",
+                  style: TextStyle(fontSize: 12),
+                ),
+                // stars(),
+                Ratings(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ]);
   }
 }
