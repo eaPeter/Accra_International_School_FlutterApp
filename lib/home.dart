@@ -84,19 +84,19 @@ class Home extends StatelessWidget {
                   ],
                 ),
                 CarouselSlider(
-                  options: CarouselOptions(height: 221.0),
+                  options: CarouselOptions(height: 250.0),
                   items: [1, 2, 3, 4, 5].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                            decoration:
-                                const BoxDecoration(color: Colors.amber),
-                            child: Text(
-                              'text $i',
-                              style: const TextStyle(fontSize: 16.0),
-                            ));
+                          width: MediaQuery.of(context).size.width,
+                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                          // decoration: const BoxDecoration(color: Colors.amber),
+                          child: const Courses(
+                              image: "logo.png",
+                              title: "My lang",
+                              subtitle: "langs langs"),
+                        );
                       },
                     );
                   }).toList(),
@@ -350,7 +350,7 @@ class Courses extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 4),
+            padding: const EdgeInsets.only(top: 0),
             child: Row(
               children: const [
                 Text(
