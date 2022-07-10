@@ -83,23 +83,28 @@ class Home extends StatelessWidget {
                     Text("See all")
                   ],
                 ),
-                CarouselSlider(
-                  options: CarouselOptions(height: 250.0),
-                  items: [1, 2, 3, 4, 5].map((i) {
-                    return Builder(
-                      builder: (BuildContext context) {
-                        return Container(
-                          width: MediaQuery.of(context).size.width,
-                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          // decoration: const BoxDecoration(color: Colors.amber),
-                          child: const Courses(
-                              image: "logo.png",
-                              title: "My lang",
-                              subtitle: "langs langs"),
+                Column(
+                  children: [
+                    CarouselSlider(
+                      options: CarouselOptions(height: 250.0),
+                      items: [1, 2, 3, 4, 5].map((i) {
+                        return Builder(
+                          builder: (BuildContext context) {
+                            return Container(
+                              width: MediaQuery.of(context).size.width,
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
+                              // decoration: const BoxDecoration(color: Colors.amber),
+                              child: const Courses(
+                                  image: "logo.png",
+                                  title: "My lang",
+                                  subtitle: "langs langs"),
+                            );
+                          },
                         );
-                      },
-                    );
-                  }).toList(),
+                      }).toList(),
+                    ),
+                  ],
                 ),
                 const Courses(
                     image: "logo.png",
