@@ -1,7 +1,9 @@
 import 'package:accra_app/home.dart';
+import 'package:accra_app/notifications.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'splash1.dart';
+import 'notifications.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // '/': (context) => const Splash1(),
-        '/': (context) => const Home(),
+        '/home': (context) => const Home(),
+        '/': (context) => const Notifications()
       },
     );
   }

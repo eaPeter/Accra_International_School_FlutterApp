@@ -83,29 +83,30 @@ class Home extends StatelessWidget {
                     Text("See all")
                   ],
                 ),
-                Column(
-                  children: [
-                    CarouselSlider(
-                      options: CarouselOptions(height: 250.0),
-                      items: [1, 2, 3, 4, 5].map((i) {
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Container(
-                              width: MediaQuery.of(context).size.width,
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 5.0),
-                              // decoration: const BoxDecoration(color: Colors.amber),
-                              child: const Courses(
-                                  image: "logo.png",
-                                  title: "My lang",
-                                  subtitle: "langs langs"),
-                            );
-                          },
-                        );
-                      }).toList(),
-                    ),
-                  ],
-                ),
+                const Courses2(),
+                // Column(
+                //   children: [
+                //     CarouselSlider(
+                //       options: CarouselOptions(height: 250.0),
+                //       items: [1, 2, 3, 4, 5].map((i) {
+                //         return Builder(
+                //           builder: (BuildContext context) {
+                //             return Container(
+                //               width: MediaQuery.of(context).size.width,
+                //               margin:
+                //                   const EdgeInsets.symmetric(horizontal: 5.0),
+                //               // decoration: const BoxDecoration(color: Colors.amber),
+                //               child: const Courses(
+                //                   image: "logo.png",
+                //                   title: "My lang",
+                //                   subtitle: "langs langs"),
+                //             );
+                //           },
+                //         );
+                //       }).toList(),
+                //     ),
+                //   ],
+                // ),
                 const Courses(
                     image: "logo.png",
                     title: "My lang",
@@ -370,5 +371,35 @@ class Courses extends StatelessWidget {
         ],
       ),
     ]);
+  }
+}
+
+class Courses2 extends StatelessWidget {
+  const Courses2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CarouselSlider(
+          options: CarouselOptions(height: 250.0),
+          items: [1, 2, 3, 4, 5].map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                  // decoration: const BoxDecoration(color: Colors.amber),
+                  child: const Courses(
+                      image: "logo.png",
+                      title: "My lang",
+                      subtitle: "langs langs"),
+                );
+              },
+            );
+          }).toList(),
+        ),
+      ],
+    );
   }
 }
