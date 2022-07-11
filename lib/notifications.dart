@@ -8,26 +8,35 @@ class Notifications extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications'),
+        title: const Text(
+          'Notifications',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         leading: Container(
           width: 45,
           height: 45,
-          padding: const EdgeInsets.only(left: 16),
           decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.black,
-                style: BorderStyle.solid,
-              ),
-              borderRadius: BorderRadius.circular(45.0)),
+            color: Colors.white,
+            border: Border.all(
+              color: Colors.black,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.circular(45.0),
+          ),
           child: const IconButton(
             onPressed: null,
             icon: Icon(
               Icons.arrow_left,
-              size: 72.0,
+              size: 48.0,
+              color: Colors.black,
             ),
           ),
         ),
+        backgroundColor: Colors.white,
       ),
       body: SizedBox(
         width: double.infinity,
