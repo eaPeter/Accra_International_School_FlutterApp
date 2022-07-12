@@ -1,5 +1,5 @@
-import 'package:accra_app/home.dart';
 import 'package:flutter/material.dart';
+import 'package:accra_app/home.dart';
 
 class Notifications extends StatelessWidget {
   const Notifications({Key? key}) : super(key: key);
@@ -16,26 +16,30 @@ class Notifications extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading: Container(
-          width: 45,
-          height: 45,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
-              color: Colors.black,
-              style: BorderStyle.solid,
-            ),
-            borderRadius: BorderRadius.circular(45.0),
-          ),
-          child: const IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.arrow_left,
-              size: 48.0,
-              color: Colors.black,
-            ),
+        leading:
+            // Container(
+            //   width: 45,
+            //   height: 45,
+            //   decoration: BoxDecoration(
+            //     color: Colors.white,
+            //     border: Border.all(
+            //       color: Colors.black,
+            //       style: BorderStyle.solid,
+            //     ),
+            //     borderRadius: BorderRadius.circular(45.0),
+            //   ),
+            //   child: const
+            IconButton(
+          onPressed: () {
+            const Home();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            size: 24.0,
+            color: Colors.black,
           ),
         ),
+        // ),
         backgroundColor: Colors.white,
       ),
       body: SizedBox(

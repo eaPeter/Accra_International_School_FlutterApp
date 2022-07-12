@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // '/': (context) => const Splash1(),
-        '/home': (context) => const Home(),
-        '/': (context) => const Notifications()
+        '/': (context) => const Home(),
+        '/notifications': (context) => const Notifications()
       },
     );
   }

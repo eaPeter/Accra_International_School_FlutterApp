@@ -217,8 +217,10 @@ class _RatingsState extends State<Ratings> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: const EdgeInsets.all(3),
+          // padding: const EdgeInsets.all(3),
           child: IconButton(
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
             iconSize: iconSize,
             icon: _rating >= 1
                 ? Icon(
@@ -234,8 +236,10 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(3),
+          // padding: const EdgeInsets.all(3),
           child: IconButton(
+            padding: const EdgeInsets.only(left: 4),
+            constraints: const BoxConstraints(),
             iconSize: iconSize,
             onPressed: _setRatingAsTwo,
             icon: _rating >= 2
@@ -251,8 +255,10 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(3),
+          // padding: const EdgeInsets.all(3),
           child: IconButton(
+            padding: const EdgeInsets.only(left: 4),
+            constraints: const BoxConstraints(),
             onPressed: _setRatingAsThree,
             icon: _rating >= 3
                 ? Icon(
@@ -267,8 +273,10 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(3),
+          // padding: const EdgeInsets.all(3),
           child: IconButton(
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
             onPressed: _setRatingAsFour,
             icon: _rating >= 4
                 ? Icon(
@@ -283,8 +291,10 @@ class _RatingsState extends State<Ratings> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(3),
+          // padding: const EdgeInsets.all(3),
           child: IconButton(
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
             onPressed: _setRatingAsFive,
             icon: _rating >= 5
                 ? Icon(
