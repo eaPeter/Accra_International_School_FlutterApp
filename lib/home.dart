@@ -12,11 +12,19 @@ class Home extends StatelessWidget {
     return Scaffold(
       drawer: const NavigationDrawerWidget(),
       appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          iconTheme: const IconThemeData(color: Colors.black),
           // title: const Text("AppBar Demo"),
           // leading: const IconButton(
           //     onPressed: null, icon: Icon(Icons.account_circle_rounded)),
           actions: const <Widget>[
-            IconButton(onPressed: null, icon: Icon(Icons.notifications))
+            IconButton(
+                onPressed: null,
+                icon: Icon(
+                  Icons.notifications,
+                  color: Colors.black,
+                ))
           ]),
       body: Container(
         margin: const EdgeInsets.only(left: 16.0, right: 16.0),
