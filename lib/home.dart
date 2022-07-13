@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
+import 'package:accra_app/navigation_drawer_widget.dart';
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const NavigationDrawerWidget(),
       appBar: AppBar(
           // title: const Text("AppBar Demo"),
-          leading: const IconButton(
-              onPressed: null, icon: Icon(Icons.account_circle_rounded)),
+          // leading: const IconButton(
+          //     onPressed: null, icon: Icon(Icons.account_circle_rounded)),
           actions: const <Widget>[
             IconButton(onPressed: null, icon: Icon(Icons.notifications))
           ]),
