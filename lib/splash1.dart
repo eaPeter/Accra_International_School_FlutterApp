@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class Splash1 extends StatelessWidget {
   const Splash1({Key? key}) : super(key: key);
@@ -86,6 +87,7 @@ class Splash1 extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/home');
+                    // Navigator.of(context).pushNamed('/home');
                   },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(

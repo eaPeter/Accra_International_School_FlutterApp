@@ -31,7 +31,8 @@ class Notifications extends StatelessWidget {
             //   child: const
             IconButton(
           onPressed: () {
-            const Home();
+            Navigator.popAndPushNamed(context, '/home');
+            // Navigator.of(context).pushNamed('/home');
           },
           icon: const Icon(
             Icons.arrow_back_ios_new,

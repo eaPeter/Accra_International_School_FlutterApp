@@ -18,16 +18,18 @@ class Home extends StatelessWidget {
           // title: const Text("AppBar Demo"),
           // leading: const IconButton(
           //     onPressed: null, icon: Icon(Icons.account_circle_rounded)),
-          actions: const <Widget>[
+          actions: <Widget>[
             IconButton(
-                onPressed: null,
-                icon: Icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/notifications');
+                },
+                icon: const Icon(
                   Icons.notifications,
                   color: Colors.black,
                 ))
           ]),
       body: Container(
-        margin: const EdgeInsets.only(left: 16.0, right: 16.0),
+        margin: const EdgeInsets.only(left: 20.0, right: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -49,18 +51,20 @@ class Home extends StatelessWidget {
                   children: [
                     Container(
                       margin: const EdgeInsets.only(top: 20.0),
-                      width: 285,
+                      width: 308,
                       height: 45,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
-                            color: const Color.fromARGB(255, 163, 163, 162),
+                            color: const Color.fromARGB(255, 214, 214, 214),
                             width: 1.0),
                         borderRadius:
                             const BorderRadius.all(Radius.circular(5)),
                       ),
                       child: Row(children: const [
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 6.0)),
                         Icon(Icons.search_rounded),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 2.0)),
                         Text("Search"),
                       ]),
                     ),
