@@ -1,37 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Notifications extends StatelessWidget {
-  const Notifications({Key? key}) : super(key: key);
+class SeeAll extends StatelessWidget {
+  const SeeAll({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Notifications',
+          'See All',
           style: TextStyle(
             color: Colors.black,
             fontSize: 24,
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading:
-            // Container(
-            //   width: 45,
-            //   height: 45,
-            //   decoration: BoxDecoration(
-            //     color: Colors.white,
-            //     border: Border.all(
-            //       color: Colors.black,
-            //       style: BorderStyle.solid,
-            //     ),
-            //     borderRadius: BorderRadius.circular(45.0),
-            //   ),
-            //   child: const
-            IconButton(
+        leading: IconButton(
           onPressed: () {
             Navigator.popAndPushNamed(context, '/home');
-            // Navigator.of(context).pushNamed('/home');
           },
           icon: const Icon(
             Icons.arrow_back_ios_new,

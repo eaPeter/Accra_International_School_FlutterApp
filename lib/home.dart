@@ -89,16 +89,22 @@ class Home extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       "English Language",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    Text("See all")
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, '/see_All'),
+                      child: const Text(
+                        "See all",
+                        style: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.45)),
+                      ),
+                    ),
                   ],
                 ),
-                const Courses2(),
+                const EnglishCourse(),
                 // Column(
                 //   children: [
                 //     CarouselSlider(
@@ -122,10 +128,10 @@ class Home extends StatelessWidget {
                 //     ),
                 //   ],
                 // ),
-                const Courses(
-                    image: "logo.png",
-                    title: "My lang",
-                    subtitle: "langs langs"),
+                // const Courses(
+                //     image: "logo.png",
+                //     title: "My lang",
+                //     subtitle: "langs langs"),
                 // const SizedBox(
                 //   height: 15,
                 //   width: double.infinity,
@@ -174,6 +180,27 @@ class Home extends StatelessWidget {
                 //     ),
                 //   ],
                 // ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Mathematics",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, '/see_All'),
+                      child: const Text(
+                        "See all",
+                        style: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.45)),
+                      ),
+                    ),
+                  ],
+                ),
+                const MathCourse()
               ],
             ),
           ],
@@ -351,13 +378,8 @@ class Courses extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // const SizedBox(
-          //   width: 200,
-          //   height: 125,
-          // ),
           Image.asset(
             "assets/images/$image",
-            // "assets/images/logo.png",
             width: 200,
             height: 125,
           ),
@@ -367,9 +389,8 @@ class Courses extends StatelessWidget {
               width: 200,
               child: Text(
                 title,
-                // "The Good English Academy Aljamar",
                 style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
             ),
           ),
@@ -377,7 +398,7 @@ class Courses extends StatelessWidget {
             padding: const EdgeInsets.only(top: 5),
             child: Text(
               subtitle,
-              // "Junior High School"
+              style: const TextStyle(color: Color.fromRGBO(0, 0, 0, 0.45)),
             ),
           ),
           Padding(
@@ -399,26 +420,54 @@ class Courses extends StatelessWidget {
   }
 }
 
-class Courses2 extends StatelessWidget {
-  const Courses2({Key? key}) : super(key: key);
+class EnglishCourse extends StatelessWidget {
+  const EnglishCourse({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CarouselSlider(
-          options: CarouselOptions(height: 250.0),
+          options: CarouselOptions(
+              height: 250.0, autoPlay: true, viewportFraction: 0.6),
           items: [1, 2, 3, 4, 5].map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  // decoration: const BoxDecoration(color: Colors.amber),
                   child: const Courses(
-                      image: "logo.png",
-                      title: "My lang",
-                      subtitle: "langs langs"),
+                      image: "english1.png",
+                      title: "The Good English Academy Aljamar",
+                      subtitle: "Junior High Edition"),
+                );
+              },
+            );
+          }).toList(),
+        ),
+      ],
+    );
+  }
+}
+
+class MathCourse extends StatelessWidget {
+  const MathCourse({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CarouselSlider(
+          options: CarouselOptions(
+              height: 250.0, autoPlay: true, viewportFraction: 0.6),
+          items: [1, 2, 3, 4, 5].map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: const Courses(
+                      image: "math1.png",
+                      title: "Advanced Mathematics Support Programmer",
+                      subtitle: "Kindergarten Edition"),
                 );
               },
             );

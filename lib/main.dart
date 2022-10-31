@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'splash1.dart';
 import 'notifications.dart';
+import 'see_All.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         // '/': (context) => const Splash1(),
         '/home': (context) => const Home(),
         '/': (context) => const Home(),
-        '/notifications': (context) => const Notifications()
+        '/notifications': (context) => const Notifications(),
+        '/see_All': (context) => const SeeAll(),
       },
     );
   }
