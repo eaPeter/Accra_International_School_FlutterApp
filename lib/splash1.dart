@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
 
 class Splash1 extends StatelessWidget {
   const Splash1({Key? key}) : super(key: key);

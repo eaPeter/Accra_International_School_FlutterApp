@@ -104,7 +104,7 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-                const EnglishCourse(),
+                EnglishCourse(),
                 // Column(
                 //   children: [
                 //     CarouselSlider(
@@ -258,7 +258,7 @@ class _RatingsState extends State<Ratings> {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
+        SizedBox(
           // padding: const EdgeInsets.all(3),
           child: IconButton(
             padding: EdgeInsets.zero,
@@ -277,7 +277,7 @@ class _RatingsState extends State<Ratings> {
             color: const Color(0xFFFFC700),
           ),
         ),
-        Container(
+        SizedBox(
           // padding: const EdgeInsets.all(3),
           child: IconButton(
             padding: const EdgeInsets.only(left: 4),
@@ -296,7 +296,7 @@ class _RatingsState extends State<Ratings> {
             color: const Color(0xFFFFC700),
           ),
         ),
-        Container(
+        SizedBox(
           // padding: const EdgeInsets.all(3),
           child: IconButton(
             padding: const EdgeInsets.only(left: 4),
@@ -314,7 +314,7 @@ class _RatingsState extends State<Ratings> {
             color: const Color(0xFFFFC700),
           ),
         ),
-        Container(
+        SizedBox(
           // padding: const EdgeInsets.all(3),
           child: IconButton(
             padding: EdgeInsets.zero,
@@ -332,7 +332,7 @@ class _RatingsState extends State<Ratings> {
             color: const Color(0xFFFFC700),
           ),
         ),
-        Container(
+        SizedBox(
           // padding: const EdgeInsets.all(3),
           child: IconButton(
             padding: EdgeInsets.zero,
@@ -420,7 +420,9 @@ class Courses extends StatelessWidget {
 }
 
 class EnglishCourse extends StatelessWidget {
-  const EnglishCourse({Key? key}) : super(key: key);
+  EnglishCourse({Key? key}) : super(key: key);
+
+  final List<String> imageList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -429,13 +431,13 @@ class EnglishCourse extends StatelessWidget {
         CarouselSlider(
           options: CarouselOptions(
               height: 250.0, autoPlay: true, viewportFraction: 0.6),
-          items: [1, 2, 3, 4, 5].map((i) {
+          items: imageList.map((i) {
             return Builder(
               builder: (BuildContext context) {
-                return Container(
+                return SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: const Courses(
-                      image: "english1.png",
+                      image: Image.asset(imageList[index]),
                       title: "The Good English Academy Aljamar",
                       subtitle: "Junior High Edition"),
                 );

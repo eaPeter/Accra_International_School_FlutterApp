@@ -30,7 +30,7 @@ class SeeAll extends StatelessWidget {
         // ),
         backgroundColor: Colors.white,
       ),
-      body: Container(
+      body: SizedBox(
         child: Column(children: const [
           EnglishCourse(),
         ]),
@@ -116,8 +116,10 @@ class EnglishCourse extends StatelessWidget {
         );
       },
       itemBuilder: (context, index) {
-        return buildCard(index);
+        return const EnglishCourseAll();
+        // return buildCard(index);
       },
+
       // child: Column(
       //   children: [
       //     CarouselSlider(
@@ -166,40 +168,98 @@ class EnglishCourse extends StatelessWidget {
       );
 }
 
+class CoursesAll extends StatelessWidget {
+  const CoursesAll(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.subtitle})
+      : super(key: key);
+  final String image;
+  final String title;
+  final String subtitle;
 
-// class EnglishCourse extends StatelessWidget {
-//   const EnglishCourse({Key? key}) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         CarouselSlider(
-//           options: CarouselOptions(
-//               height: 250.0, autoPlay: true, viewportFraction: 0.6),
-//           items: [1, 2, 3, 4, 5].map((i) {
-//             return Builder(
-//               builder: (BuildContext context) {
-//                 return Container(
-//                   width: MediaQuery.of(context).size.width,
-//                   child: Column(
-//                     children: const [
-//                       Courses(
-//                           image: "english1.png",
-//                           title: "The Good English Academy Aljamar",
-//                           subtitle: "Junior High Edition"),
-//                       // Courses(
-//                       //     image: "english2.png",
-//                       //     title: "The Good English Academy Aljamar",
-//                       //     subtitle: "Junior High Edition"),
-//                     ],
-//                   ),
-//                 );
-//               },
-//             );
-//           }).toList(),
-//         ),
-//       ],
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      const SizedBox(
+        height: 15,
+        width: double.infinity,
+      ),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            "assets/images/$image",
+            width: 200,
+            height: 125,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: SizedBox(
+              width: 200,
+              child: Text(
+                title,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Text(
+              subtitle,
+              style: const TextStyle(color: Color.fromRGBO(0, 0, 0, 0.45)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 0),
+            child: Row(
+              children: const [
+                Text(
+                  "5.0",
+                  style: TextStyle(fontSize: 12),
+                ),
+                Ratings(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ]);
+  }
+}
 
+class EnglishCourseAll extends StatelessWidget {
+  const EnglishCourseAll({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CarouselSlider(
+          options: CarouselOptions(
+              height: 250.0, autoPlay: true, viewportFraction: 0.6),
+          items: [1, 2, 3, 4, 5].map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: const [
+                      Courses(
+                          image: "english1.png",
+                          title: "The Good English Academy Aljamar",
+                          subtitle: "Junior High Edition"),
+                    ],
+                  ),
+                );
+              },
+            );
+          }).toList(),
+        ),
+      ],
+    );
+  }
+}
