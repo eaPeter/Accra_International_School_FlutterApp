@@ -5,9 +5,9 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final name = 'Andrews Appiah';
-    final email = 'andrewsappiah@gmai.com';
-    final image = 'assets/images/logo.png';
+    const name = 'Andrews Appiah';
+    const email = 'andrewsappiah@gmai.com';
+    const image = 'assets/images/logo.png';
     final drawerWidth = MediaQuery.of(context).size.width;
 
     return Drawer(

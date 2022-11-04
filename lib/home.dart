@@ -96,7 +96,7 @@ class Home extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, '/see_All'),
+                      onTap: () => Navigator.pushNamed(context, '/see_all'),
                       child: const Text(
                         "See all",
                         style: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.45)),
@@ -192,7 +192,7 @@ class Home extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, '/see_All'),
+                      onTap: () => Navigator.pushNamed(context, '/see_all'),
                       child: const Text(
                         "See all",
                         style: TextStyle(color: Color.fromRGBO(0, 0, 0, 0.45)),
@@ -409,7 +409,6 @@ class Courses extends StatelessWidget {
                   "5.0",
                   style: TextStyle(fontSize: 12),
                 ),
-                // stars(),
                 Ratings(),
               ],
             ),
@@ -458,11 +457,14 @@ class MathCourse extends StatelessWidget {
       children: [
         CarouselSlider(
           options: CarouselOptions(
-              height: 250.0, autoPlay: true, viewportFraction: 0.6),
+            height: 250.0,
+            autoPlay: true,
+            viewportFraction: 0.6,
+          ),
           items: [1, 2, 3, 4, 5].map((i) {
             return Builder(
               builder: (BuildContext context) {
-                return Container(
+                return SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: const Courses(
                       image: "math1.png",

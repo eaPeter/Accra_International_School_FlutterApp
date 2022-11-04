@@ -15,23 +15,9 @@ class Notifications extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading:
-            // Container(
-            //   width: 45,
-            //   height: 45,
-            //   decoration: BoxDecoration(
-            //     color: Colors.white,
-            //     border: Border.all(
-            //       color: Colors.black,
-            //       style: BorderStyle.solid,
-            //     ),
-            //     borderRadius: BorderRadius.circular(45.0),
-            //   ),
-            //   child: const
-            IconButton(
+        leading: IconButton(
           onPressed: () {
             Navigator.popAndPushNamed(context, '/home');
-            // Navigator.of(context).pushNamed('/home');
           },
           icon: const Icon(
             Icons.arrow_back_ios_new,
@@ -39,7 +25,6 @@ class Notifications extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        // ),
         backgroundColor: Colors.white,
       ),
       body: SizedBox(
