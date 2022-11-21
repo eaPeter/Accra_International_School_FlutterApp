@@ -2,7 +2,7 @@ import 'package:accra_app/home.dart';
 import 'package:accra_app/notifications.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'splash1.dart';
+import 'onboarding.dart';
 import 'notifications.dart';
 import 'see_all.dart';
 
@@ -22,11 +22,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => const Splash1(),
+        '/': (context) => const Onboarding(),
         '/home': (context) => const Home(),
         // '/': (context) => const Home(),
         '/notifications': (context) => const Notifications(),
-        '/see_all': (context) => const SeeAll(),
+        // '/see_all': (context) => const SeeAll(),
+        // '/': (context) => SeeAll(),
       },
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Splash1 extends StatelessWidget {
-  const Splash1({Key? key}) : super(key: key);
+class Onboarding extends StatelessWidget {
+  const Onboarding({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -436,10 +436,10 @@ class EnglishCourse extends StatelessWidget {
               builder: (BuildContext context) {
                 return SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  child: const Courses(
-                      image: Image.asset(imageList[index]),
-                      title: "The Good English Academy Aljamar",
-                      subtitle: "Junior High Edition"),
+                  // child: const Courses(
+                  //     image: Image.asset(imageList[index]),
+                  //     title: "The Good English Academy Aljamar",
+                  //     subtitle: "Junior High Edition"),
                 );
               },
             );
