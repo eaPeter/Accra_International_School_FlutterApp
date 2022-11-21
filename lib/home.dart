@@ -200,7 +200,7 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-                const MathCourse()
+                const MathCourse(),
               ],
             ),
           ],
@@ -431,15 +431,15 @@ class EnglishCourse extends StatelessWidget {
         CarouselSlider(
           options: CarouselOptions(
               height: 250.0, autoPlay: true, viewportFraction: 0.6),
-          items: imageList.map((i) {
+          items: [1, 2, 3, 4, 5].map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  // child: const Courses(
-                  //     image: Image.asset(imageList[index]),
-                  //     title: "The Good English Academy Aljamar",
-                  //     subtitle: "Junior High Edition"),
+                  child: const Courses(
+                      image: "english1.png",
+                      title: "The Good English Academy Aljamar",
+                      subtitle: "Junior High Edition"),
                 );
               },
             );
