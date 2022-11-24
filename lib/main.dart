@@ -16,10 +16,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final ButtonStyle styling = ElevatedButton.styleFrom(
-    //   primary: const Color(0xFF283054),
-    // );
-
     return MaterialApp(
       initialRoute: '/',
       routes: {
